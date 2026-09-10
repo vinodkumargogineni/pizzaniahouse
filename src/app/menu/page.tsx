@@ -27,18 +27,33 @@ export default function MenuPage() {
             from <span className="text-ember">scratch</span>
           </>
         }
-        intro="Prices are subject to change and may vary slightly by location. Ask the counter about daily specials."
+        intro="A guide to what we make — full menu, live prices, and daily specials are on our online ordering page. Prices here may vary slightly by location."
       >
         <div className="flex flex-wrap gap-3">
-          <Button href={site.orderOnline}>Order online</Button>
+          <Button href={site.orderOnline}>Full menu &amp; order online</Button>
           <Button href="#menu-top" variant="outline">
-            Browse the menu
+            Browse here
           </Button>
           <Button href="#combos" variant="outline">
             Combo offers
           </Button>
         </div>
       </PageHero>
+
+      <Container className="pt-10">
+        <a
+          href={site.orderOnline}
+          target="_blank"
+          rel="noreferrer"
+          className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-ember/30 bg-ember/10 px-5 py-4 text-sm transition-colors hover:bg-ember/15"
+        >
+          <span className="text-cream/85">
+            <strong className="text-cream">Want the complete, always-current menu?</strong>{" "}
+            Every item and price is on our online ordering page.
+          </span>
+          <span className="font-semibold text-ember">Open it →</span>
+        </a>
+      </Container>
 
       <MenuExplorer />
 
