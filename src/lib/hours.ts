@@ -88,6 +88,43 @@ const hhmm = (mins: number) => {
   return `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
 };
 
+const ABBR: Record<string, string> = {
+  Monday: "Mon",
+  Tuesday: "Tue",
+  Wednesday: "Wed",
+  Thursday: "Thu",
+  Friday: "Fri",
+  Saturday: "Sat",
+  Sunday: "Sun",
+};
+
+const compactTime = (s: string) =>
+  s
+    .replace(/:00/g, "")
+    .replace(/\s*–\s*/, "–")
+    .replace(/\s(AM|PM)/g, (_, ap) => ap.toLowerCase());
+
+/** One-line hours summary, grouping consecutive days with the same hours:
+ *  "Mon–Sat 7am–8pm · Sun closed". */
+export function hoursSummary(hours: Hours[]): string {
+  const groups: { start: string; end: string; open: string }[] = [];
+  for (const h of hours) {
+    const last = groups[groups.length - 1];
+    if (last && last.open === h.open) last.end = h.day;
+    else groups.push({ start: h.day, end: h.day, open: h.open });
+  }
+  return groups
+    .map((g) => {
+      const days =
+        g.start === g.end
+          ? ABBR[g.start]
+          : `${ABBR[g.start]}–${ABBR[g.end]}`;
+      const val = /[0-9]/.test(g.open) ? compactTime(g.open) : g.open.toLowerCase();
+      return `${days} ${val}`;
+    })
+    .join(" · ");
+}
+
 /** Schema.org openingHoursSpecification from a Monday-first hours list. */
 export function openingHoursSpec(hours: Hours[]) {
   return hours.flatMap((h) => {

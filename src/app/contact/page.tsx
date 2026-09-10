@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { ContactForm } from "@/components/ContactForm";
 import { BookingWidget } from "@/components/BookingWidget";
+import { OpenNow } from "@/components/OpenNow";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { site } from "@/data/site";
 import { locations } from "@/data/locations";
+import { hoursSummary } from "@/lib/hours";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -78,19 +81,30 @@ export default function ContactPage() {
             {locations.map((loc, i) => (
               <Reveal key={loc.slug} delay={i + 1}>
                 <div className="rounded-2xl border border-cream/10 bg-ink-800 p-6">
-                  <h2 className="font-display text-xl">{loc.name}</h2>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <h2 className="font-display text-xl">{loc.name}</h2>
+                    <OpenNow hours={loc.hours} status={loc.status} compact />
+                  </div>
                   <ul className="mt-4 space-y-3 text-sm text-cream/75">
                     <li className="flex gap-2.5">
                       <MapPin size={15} className="mt-0.5 shrink-0 text-ember" />
-                      {loc.addressLine1}, {loc.city}, {loc.region} {loc.postal}
+                      {loc.addressLine1.startsWith("TODO")
+                        ? `${loc.city}, ${loc.region} ${loc.postal}`
+                        : `${loc.addressLine1}, ${loc.city}, ${loc.region} ${loc.postal}`}
                     </li>
                     <li className="flex gap-2.5">
                       <Clock size={15} className="mt-0.5 shrink-0 text-ember" />
                       {loc.status === "open"
-                        ? "Mon–Thu 11a–10p · Fri–Sat 11a–12a · Sun 12–9p"
-                        : "Opening 2026"}
+                        ? hoursSummary(loc.hours)
+                        : "Opening soon"}
                     </li>
                   </ul>
+                  <Link
+                    href={`/locations/${loc.slug}`}
+                    className="mt-4 inline-block text-sm font-semibold text-ember hover:underline"
+                  >
+                    Full hours &amp; directions →
+                  </Link>
                 </div>
               </Reveal>
             ))}
