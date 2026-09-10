@@ -24,16 +24,15 @@ export type Location = {
   orderLinks: { label: string; href: string }[];
 };
 
-// TODO: confirm exact hours per branch. Estimated from public listings.
-const standardHours: Hours[] = [
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-  "Sunday",
-].map((day) => ({ day, open: "9:00 AM – 10:00 PM" }));
+const cranberryHours: Hours[] = [
+  { day: "Monday", open: "7:00 AM – 8:00 PM" },
+  { day: "Tuesday", open: "7:00 AM – 8:00 PM" },
+  { day: "Wednesday", open: "7:00 AM – 8:00 PM" },
+  { day: "Thursday", open: "7:00 AM – 8:00 PM" },
+  { day: "Friday", open: "7:00 AM – 8:00 PM" },
+  { day: "Saturday", open: "7:00 AM – 8:00 PM" },
+  { day: "Sunday", open: "Closed" },
+];
 
 const comingSoonHours: Hours[] = [
   "Monday",
@@ -69,8 +68,8 @@ export const locations: Location[] = [
     mapEmbed:
       "https://www.google.com/maps?q=40.6985847,-80.1208054&z=17&output=embed",
     blurb:
-      "Our kitchen at 2620 Rochester Road — opened June 2025, serving fresh pizza, hoagies, breakfast, and more all day.",
-    hours: standardHours,
+      "Our kitchen at 2620 Rochester Road — opened June 2025, serving fresh pizza, hoagies, breakfast, and more from 7 AM.",
+    hours: cranberryHours,
     features: ["Dine-in", "Takeout", "Curbside pickup", "Delivery", "Catering"],
     orderLinks: [
       {

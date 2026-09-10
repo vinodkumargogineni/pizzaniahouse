@@ -8,7 +8,7 @@ import { Container } from "@/components/ui/Container";
 
 const stats = [
   { value: "80+", label: "Menu items" },
-  { value: "9am", label: "Open from" },
+  { value: "7am", label: "Open from" },
   { value: "Fresh", label: "Dough daily" },
   { value: "2", label: "PA locations" },
 ];
