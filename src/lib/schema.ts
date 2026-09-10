@@ -38,6 +38,9 @@ export function restaurantSchema(loc: Location) {
     ...(loc.status === "open"
       ? { openingHoursSpecification: openingHoursSpec(loc.hours) }
       : {}),
+    ...(loc.facebook || loc.instagram
+      ? { sameAs: [loc.facebook, loc.instagram].filter(Boolean) }
+      : {}),
     acceptsReservations: "https://wa.me/" + site.whatsapp,
   };
 }
@@ -57,7 +60,7 @@ export function organizationSchema() {
     priceRange: "$$",
     servesCuisine: cuisine,
     image: `${site.url}/opengraph-image`,
-    sameAs: [site.social.instagram, site.social.facebook, site.social.tiktok],
+    sameAs: [site.social.instagram, site.social.facebook],
     address: {
       "@type": "PostalAddress",
       streetAddress: primary.addressLine1,

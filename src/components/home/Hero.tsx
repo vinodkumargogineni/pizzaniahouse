@@ -7,10 +7,10 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 
 const stats = [
-  { value: "2016", label: "Serving since" },
-  { value: "48hr", label: "Dough proof" },
-  { value: "3", label: "Branches" },
-  { value: "★ 4.8", label: "1,200+ reviews" },
+  { value: "3", label: "PA branches" },
+  { value: "80+", label: "Menu items" },
+  { value: "9am", label: "Doors open" },
+  { value: "Fresh", label: "Dough daily" },
 ];
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -54,7 +54,7 @@ export function Hero() {
             className="mt-6 max-w-md text-lg leading-relaxed text-cream-dim"
           >
             Hand-tossed pizzas, loaded hoagies, burgers, pastas and more —
-            built to order, from scratch since 2016.
+            built to order, made fresh every day.
           </motion.p>
 
           <motion.div

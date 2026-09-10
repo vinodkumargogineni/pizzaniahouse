@@ -10,22 +10,23 @@ import { timeline, values } from "@/data/content";
 export const metadata: Metadata = {
   title: "Our Story",
   description:
-    "How two friends, one used deck oven, and a family sauce recipe grew into Pizzania House.",
+    "Pizzania House — from-scratch pizza, hoagies, and more, now serving three Pennsylvania neighborhoods.",
 };
 
 export default function AboutPage() {
   return (
     <>
+      {/* TODO: replace the copy below with the owners' real founding story. */}
       <PageHero
         eyebrow="Our story"
         title={
           <>
-            Started with one
+            Fresh dough,
             <br />
-            oven and a <span className="text-ember">recipe</span>
+            <span className="text-ember">bold</span> flavor
           </>
         }
-        intro="Pizzania House began in 2016 as a 12-seat shop in Cranberry Township. The dough recipe hasn't changed. Neither has the reason we do it."
+        intro="Pizzania House started in Cranberry Township and grew fast — three Western Pennsylvania branches serving pizza, hoagies, wings, and breakfast, all made from scratch."
       />
 
       <section className="py-24">
@@ -33,7 +34,7 @@ export default function AboutPage() {
           <Reveal>
             <div className="overflow-hidden rounded-3xl border border-cream/10">
               <div className="aspect-[4/5]">
-                <Placeholder label="The original Cranberry Township counter" hue={18} />
+                <Placeholder label="Inside the Cranberry Township kitchen" hue={18} />
               </div>
             </div>
           </Reveal>
@@ -51,24 +52,23 @@ export default function AboutPage() {
             <div className="mt-6 space-y-4 text-cream-dim">
               <Reveal delay={1}>
                 <p>
-                  Sal and Mike met working the line at a pizzeria that has since
-                  closed. They kept saying they&apos;d do it differently — better
-                  dough, better meat, a place that felt like the neighborhood
-                  owned it.
+                  It started with one kitchen in Cranberry Township and a simple
+                  idea: a big menu where everything is actually made in the shop
+                  — dough, sauces, and every sandwich built to order.
                 </p>
               </Reveal>
               <Reveal delay={2}>
                 <p>
-                  In 2016 they scraped together enough for a used deck oven and a
-                  narrow storefront. Sal&apos;s grandmother handed over the sauce
-                  recipe on one condition: don&apos;t rush it.
+                  Word got around. A second branch opened in Connellsville, a
+                  third is on the way in Washington, and the menu keeps the same
+                  standard at every counter.
                 </p>
               </Reveal>
               <Reveal delay={3}>
                 <p>
-                  Ten years later there&apos;s a second kitchen on the way and a
-                  catering line that never stops ringing — but the dough still
-                  proofs for two days, and someone still answers the phone.
+                  Pizza, cheesesteaks, hoagies, wings, pasta, breakfast, and
+                  catering for any crowd — Good Food, Good Mood, wherever you
+                  find us.
                 </p>
               </Reveal>
             </div>
@@ -81,7 +81,7 @@ export default function AboutPage() {
           <SectionHeading eyebrow="How we got here" title="The timeline" />
           <ol className="mt-14 space-y-0">
             {timeline.map((t, i) => (
-              <Reveal key={t.year} delay={i} as="li">
+              <Reveal key={i} delay={i} as="li">
                 <div className="grid gap-4 border-t border-cream/10 py-8 md:grid-cols-[140px_1fr]">
                   <span className="font-display text-3xl text-ember">
                     {t.year}

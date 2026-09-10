@@ -1,64 +1,61 @@
+// TODO: replace with real Google / Facebook reviews (with permission). Placeholder copy.
 export const testimonials = [
   {
     quote:
-      "The loaded steak hoagie is the best I've had outside of South Philly. This place is the real deal.",
-    name: "Marcus D.",
-    detail: "Regular since 2019",
+      "Huge menu and everything we tried was fresh. The Philly steak hoagie is the real deal.",
+    name: "A Cranberry regular",
+    detail: "Placeholder review",
   },
   {
     quote:
-      "We cater every office party from here now. Always on time, always hot, never a complaint.",
-    name: "Priya S.",
-    detail: "Office manager, Cranberry Twp",
+      "Ordered for the whole office — showed up hot, on time, and there wasn't a slice left.",
+    name: "Local business",
+    detail: "Placeholder review",
   },
   {
     quote:
-      "Took the kids on a Friday night and the dough guy let them watch him toss a pie. Made their week.",
-    name: "The Halloran Family",
-    detail: "Google review · ★★★★★",
+      "Specialty pizzas are loaded. The honey mustard one sounds weird and is somehow perfect.",
+    name: "First-timer",
+    detail: "Placeholder review",
   },
   {
-    quote: "Hot honey on the Pizzania pie should be illegal. I dream about it.",
-    name: "Deshawn W.",
-    detail: "Instagram",
+    quote: "Finally a place near us that does breakfast and pizza. Kids are thrilled.",
+    name: "Fayette County",
+    detail: "Placeholder review",
   },
 ];
 
 export const values = [
   {
-    title: "48-hour dough",
-    body: "Every ball of dough is mixed, folded, and cold-proofed for two full days before it ever sees the oven. That's where the flavor lives.",
+    title: "Dough made in-house",
+    body: "We mix and proof our pizza dough in the shop, not out of a bag. It's the difference you taste in the first bite of crust.",
   },
   {
-    title: "Cut fresh, cooked to order",
-    body: "We shave our ribeye in-house and build every sandwich when you order it. Nothing sits under a heat lamp.",
+    title: "Cooked to order",
+    body: "Hoagies hit the griddle when you order them and pizzas go in the deck oven fresh. Nothing sits under a heat lamp.",
   },
   {
-    title: "Neighborhood first",
-    body: "We sponsor the little league team, we know your usual, and we still answer the phone ourselves.",
+    title: "Big menu, one standard",
+    body: "Pizza, cheesesteaks, wings, pasta, breakfast — 80-plus items, and every one gets the same care as the last.",
   },
 ];
 
+// TODO: confirm dates with the owners. Cranberry grand opening was June 2025.
 export const timeline = [
   {
-    year: "2016",
-    title: "One oven, one recipe",
-    body: "Two friends, a used deck oven, and a family sauce recipe open a 12-seat shop in Cranberry Township.",
+    year: "2025",
+    title: "Cranberry Township opens",
+    body: "Pizzania House opens its flagship kitchen at 2620 Rochester Road with a full pizza, hoagie, and breakfast menu.",
   },
   {
-    year: "2019",
-    title: "The cheesesteak arrives",
-    body: "A trip to Philadelphia turns into a griddle, a meat slicer, and a menu that doubles overnight.",
+    year: "2025",
+    title: "Connellsville joins",
+    body: "A second branch takes over 1222 E Crawford Avenue, bringing the same menu to Fayette County.",
   },
   {
-    year: "2022",
-    title: "Catering takes off",
-    body: "Word gets around. We add a dedicated catering line and a second delivery van.",
-  },
-  {
-    year: "2026",
-    title: "Three branches",
-    body: "Pizzania House grows to Connellsville and Washington — same dough, same ovens, same recipe box.",
+    year: "Soon",
+    title: "Washington is next",
+    body: "Branch number three is getting ready at 502 Washington Road in South Strabane — opening soon.",
   },
 ];
 

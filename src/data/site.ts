@@ -4,16 +4,16 @@ export const site = {
   description:
     "Hand-tossed pizzas, loaded hoagies, and fresh food made from scratch every day. Pizzania House — Cranberry Township, with branches in Connellsville and Washington, PA.",
   url: "https://pizzaniahouse.com",
-  email: "hello@pizzaniahouse.com",
+  email: "pizzaniahousepa@gmail.com",
   phoneDisplay: "(724) 772-6226",
   phoneHref: "+17247726226",
   // WhatsApp business number in full international format, digits only (no +, spaces, or dashes).
   whatsapp: "17247726226",
   whatsappDisplay: "+1 (724) 772-6226",
   social: {
-    instagram: "https://instagram.com/pizzaniahouse",
-    facebook: "https://facebook.com/pizzaniahouse",
-    tiktok: "https://tiktok.com/@pizzaniahouse",
+    // Per-branch pages also live on each location object.
+    instagram: "https://www.instagram.com/pizzania_house_cranberry/",
+    facebook: "https://www.facebook.com/pizzaniahousecranberry/",
   },
   // Delivery-partner storefronts — replace "#" with the real store URLs.
   delivery: [

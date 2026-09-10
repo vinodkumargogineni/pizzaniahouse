@@ -138,6 +138,30 @@ export default async function LocationDetail({
                 >
                   {loc.phoneDisplay}
                 </a>
+                {(loc.facebook || loc.instagram) && (
+                  <div className="mt-2 flex flex-wrap gap-3 text-sm">
+                    {loc.facebook && (
+                      <a
+                        href={loc.facebook}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-cream/60 hover:text-ember"
+                      >
+                        Facebook →
+                      </a>
+                    )}
+                    {loc.instagram && (
+                      <a
+                        href={loc.instagram}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-cream/60 hover:text-ember"
+                      >
+                        Instagram →
+                      </a>
+                    )}
+                  </div>
+                )}
                 {loc.status === "open" && (
                   <a
                     href={waLink(

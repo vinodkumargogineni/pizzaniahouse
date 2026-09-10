@@ -12,6 +12,8 @@ export type Location = {
   phoneDisplay: string;
   phoneHref: string;
   whatsapp?: string;
+  facebook?: string;
+  instagram?: string;
   lat?: number;
   lng?: number;
   mapQuery: string;
@@ -22,15 +24,16 @@ export type Location = {
   orderLinks: { label: string; href: string }[];
 };
 
+// TODO: confirm exact hours per branch. Estimated from public listings.
 const standardHours: Hours[] = [
-  { day: "Monday", open: "11:00 AM – 10:00 PM" },
-  { day: "Tuesday", open: "11:00 AM – 10:00 PM" },
-  { day: "Wednesday", open: "11:00 AM – 10:00 PM" },
-  { day: "Thursday", open: "11:00 AM – 10:00 PM" },
-  { day: "Friday", open: "11:00 AM – 12:00 AM" },
-  { day: "Saturday", open: "11:00 AM – 12:00 AM" },
-  { day: "Sunday", open: "12:00 PM – 9:00 PM" },
-];
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+].map((day) => ({ day, open: "9:00 AM – 10:00 PM" }));
 
 const comingSoonHours: Hours[] = [
   "Monday",
@@ -53,9 +56,11 @@ export const locations: Location[] = [
     city: "Cranberry Township",
     region: "Pennsylvania",
     postal: "16066",
-    phoneDisplay: "(724) 772-6226",
-    phoneHref: "+17247726226",
+    phoneDisplay: "(724) 900-2177",
+    phoneHref: "+17249002177",
     whatsapp: "17247726226",
+    facebook: "https://www.facebook.com/pizzaniahousecranberry/",
+    instagram: "https://www.instagram.com/pizzania_house_cranberry/",
     // Exact pin from the Google Maps listing for Pizzania House.
     lat: 40.6985847,
     lng: -80.1208054,
@@ -63,7 +68,7 @@ export const locations: Location[] = [
     mapEmbed:
       "https://www.google.com/maps?q=40.6985847,-80.1208054&z=17&output=embed",
     blurb:
-      "Our main kitchen at 2620 Rochester Road — the ovens, the recipes, and the counter that's been feeding the neighborhood since day one.",
+      "Our flagship kitchen at 2620 Rochester Road — opened June 2025 and serving fresh pizza, hoagies, breakfast, and more all day.",
     hours: standardHours,
     features: ["Dine-in", "Takeout", "Curbside pickup", "Delivery", "Catering"],
     orderLinks: [
@@ -74,9 +79,9 @@ export const locations: Location[] = [
   {
     slug: "connellsville-pa",
     name: "Connellsville",
-    status: "coming-soon",
-    // TODO: add the Connellsville street address, ZIP, phone, hours, and map coordinates.
-    addressLine1: "TODO — Connellsville street address",
+    // Live on DoorDash. TODO: confirm exact daily hours + a direct phone.
+    status: "open",
+    addressLine1: "1222 E Crawford Avenue",
     addressLine2: "",
     city: "Connellsville",
     region: "Pennsylvania",
@@ -84,17 +89,21 @@ export const locations: Location[] = [
     phoneDisplay: "(724) 772-6226",
     phoneHref: "+17247726226",
     whatsapp: "17247726226",
-    mapQuery: "Connellsville, PA",
-    mapEmbed: "https://www.google.com/maps?q=Connellsville,+PA&z=13&output=embed",
+    facebook: "https://www.facebook.com/PizzaniaHouseConnellsville/",
+    lat: 40.0339249,
+    lng: -79.5816698,
+    mapQuery: "Pizzania House, 1222 E Crawford Ave, Connellsville, PA 15425",
+    mapEmbed:
+      "https://www.google.com/maps?q=40.0339249,-79.5816698&z=17&output=embed",
     blurb:
-      "A Pizzania House branch in Connellsville. Address, hours, and map are placeholders — swap in the real details in src/data/locations.ts.",
-    hours: comingSoonHours,
+      "Our Connellsville branch at 1222 E Crawford Avenue — fresh pizza, hoagies, and wings for Fayette County, with delivery on the major apps.",
+    hours: standardHours,
     features: ["Dine-in", "Takeout", "Delivery", "Catering"],
-    orderLinks: [],
+    orderLinks: [{ label: "Order on DoorDash", href: "#" }],
   },
   {
     slug: "washington-pa",
-    name: "Washington Road",
+    name: "Washington",
     status: "coming-soon",
     addressLine1: "502 Washington Road",
     addressLine2: "",
@@ -104,13 +113,14 @@ export const locations: Location[] = [
     phoneDisplay: "(724) 772-6226",
     phoneHref: "+17247726226",
     whatsapp: "17247726226",
+    facebook: "https://www.facebook.com/pizzaniahousewashington/",
     lat: 40.1904918,
     lng: -80.2125217,
     mapQuery: "502 Washington Road, Washington, PA 15301",
     mapEmbed:
       "https://www.google.com/maps?q=40.1904918,-80.2125217&z=17&output=embed",
     blurb:
-      "Our Washington Road branch at 502 Washington Road. Confirm the phone and hours below, then flip status to \"open\" in src/data/locations.ts.",
+      "Opening soon at 502 Washington Road (the former Subway in South Strabane) — same dough, same ovens, same Good Food · Good Mood. Confirm the phone and hours, then flip status to \"open\" in src/data/locations.ts.",
     hours: comingSoonHours,
     features: ["Dine-in", "Takeout", "Delivery", "Catering"],
     orderLinks: [],
