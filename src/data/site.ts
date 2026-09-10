@@ -15,7 +15,13 @@ export const site = {
     instagram: "https://www.instagram.com/pizzania_house_cranberry/",
     facebook: "https://www.facebook.com/pizzaniahousecranberry/",
   },
-  // Direct online ordering (DoorDash-powered storefront, pickup or delivery).
+  // Online ordering link. Every "Order" button on the site + the /order redirect
+  // use this one value.
+  //   NOW:   order.online (DoorDash storefront) — no marketplace commission on
+  //          direct-link orders, but still a 3rd-party checkout.
+  //   NEXT:  paste the Square Online store URL here (e.g.
+  //          https://pizzaniahouse.square.site or order.pizzaniahouse.com)
+  //          once the Square Online site is published. See docs/square-ordering-setup.md
   orderOnline: "https://order.online/store/-42456832/",
   // Delivery-partner storefronts (Cranberry Township).
   delivery: [
