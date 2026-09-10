@@ -20,7 +20,7 @@ export const testimonials = [
   },
   {
     quote: "Finally a place near us that does breakfast and pizza. Kids are thrilled.",
-    name: "Fayette County",
+    name: "Cranberry family",
     detail: "Placeholder review",
   },
 ];
@@ -45,17 +45,12 @@ export const timeline = [
   {
     year: "2025",
     title: "Cranberry Township opens",
-    body: "Pizzania House opens its flagship kitchen at 2620 Rochester Road with a full pizza, hoagie, and breakfast menu.",
-  },
-  {
-    year: "2025",
-    title: "Connellsville joins",
-    body: "A second branch takes over 1222 E Crawford Avenue, bringing the same menu to Fayette County.",
+    body: "Pizzania House opens at 2620 Rochester Road with a full pizza, hoagie, and breakfast menu.",
   },
   {
     year: "Soon",
     title: "Washington is next",
-    body: "Branch number three is getting ready at 502 Washington Road in South Strabane — opening soon.",
+    body: "A second location is getting ready at 502 Washington Road in South Strabane — opening soon.",
   },
 ];
 

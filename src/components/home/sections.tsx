@@ -175,9 +175,9 @@ export function LocationsPreview() {
           eyebrow="Come see us"
           title={
             <>
-              Three branches,
+              Come see
               <br />
-              one <span className="text-ember">recipe box</span>
+              us in <span className="text-ember">Cranberry</span>
             </>
           }
         />

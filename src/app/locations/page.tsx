@@ -12,7 +12,7 @@ import { locations } from "@/data/locations";
 export const metadata: Metadata = {
   title: "Locations",
   description:
-    "Find Pizzania House — our Cranberry Township kitchen, with branches in Connellsville and Washington, PA.",
+    "Find Pizzania House in Cranberry Township, PA — with a second location coming soon to Washington.",
 };
 
 export default function LocationsPage() {
@@ -27,7 +27,7 @@ export default function LocationsPage() {
             <span className="text-ember">Pizzania</span>
           </>
         }
-        intro="Our main kitchen in Cranberry Township, plus branches in Connellsville and Washington. Same dough, same ovens, same Good Food · Good Mood."
+        intro="Our kitchen in Cranberry Township, with a second location coming soon to Washington. Same dough, same ovens, same Good Food · Good Mood."
       />
 
       <section className="py-16">

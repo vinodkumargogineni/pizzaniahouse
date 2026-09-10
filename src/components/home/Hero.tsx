@@ -7,10 +7,10 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 
 const stats = [
-  { value: "3", label: "PA branches" },
   { value: "80+", label: "Menu items" },
-  { value: "9am", label: "Doors open" },
+  { value: "9am", label: "Open from" },
   { value: "Fresh", label: "Dough daily" },
+  { value: "2", label: "PA locations" },
 ];
 
 const ease = [0.16, 1, 0.3, 1] as const;

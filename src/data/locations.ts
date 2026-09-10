@@ -50,14 +50,15 @@ export const locations: Location[] = [
     slug: "cranberry-township-pa",
     name: "Cranberry Township",
     status: "open",
-    // TODO: add the street number — replace this line with the full street address.
-    addressLine1: "Rochester Road",
+    addressLine1: "2620 Rochester Road",
     addressLine2: "",
     city: "Cranberry Township",
     region: "Pennsylvania",
     postal: "16066",
-    phoneDisplay: "(724) 900-2177",
-    phoneHref: "+17249002177",
+    // NOTE: printed menu shows (724) 772-6226; a DoorDash listing shows
+    // (724) 900-2177. Confirm which is the storefront line.
+    phoneDisplay: "(724) 772-6226",
+    phoneHref: "+17247726226",
     whatsapp: "17247726226",
     facebook: "https://www.facebook.com/pizzaniahousecranberry/",
     instagram: "https://www.instagram.com/pizzania_house_cranberry/",
@@ -68,38 +69,13 @@ export const locations: Location[] = [
     mapEmbed:
       "https://www.google.com/maps?q=40.6985847,-80.1208054&z=17&output=embed",
     blurb:
-      "Our flagship kitchen at 2620 Rochester Road — opened June 2025 and serving fresh pizza, hoagies, breakfast, and more all day.",
+      "Our kitchen at 2620 Rochester Road — opened June 2025, serving fresh pizza, hoagies, breakfast, and more all day.",
     hours: standardHours,
     features: ["Dine-in", "Takeout", "Curbside pickup", "Delivery", "Catering"],
     orderLinks: [
       { label: "Order Pickup", href: "#" },
       { label: "Order Delivery", href: "#" },
     ],
-  },
-  {
-    slug: "connellsville-pa",
-    name: "Connellsville",
-    // Live on DoorDash. TODO: confirm exact daily hours + a direct phone.
-    status: "open",
-    addressLine1: "1222 E Crawford Avenue",
-    addressLine2: "",
-    city: "Connellsville",
-    region: "Pennsylvania",
-    postal: "15425",
-    phoneDisplay: "(724) 772-6226",
-    phoneHref: "+17247726226",
-    whatsapp: "17247726226",
-    facebook: "https://www.facebook.com/PizzaniaHouseConnellsville/",
-    lat: 40.0339249,
-    lng: -79.5816698,
-    mapQuery: "Pizzania House, 1222 E Crawford Ave, Connellsville, PA 15425",
-    mapEmbed:
-      "https://www.google.com/maps?q=40.0339249,-79.5816698&z=17&output=embed",
-    blurb:
-      "Our Connellsville branch at 1222 E Crawford Avenue — fresh pizza, hoagies, and wings for Fayette County, with delivery on the major apps.",
-    hours: standardHours,
-    features: ["Dine-in", "Takeout", "Delivery", "Catering"],
-    orderLinks: [{ label: "Order on DoorDash", href: "#" }],
   },
   {
     slug: "washington-pa",

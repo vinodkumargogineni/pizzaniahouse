@@ -34,7 +34,6 @@ export const metadata: Metadata = {
     "cheesesteak",
     "hoagies",
     "Cranberry Township",
-    "Connellsville",
     "Washington PA",
     "catering",
     "Pizzania House",

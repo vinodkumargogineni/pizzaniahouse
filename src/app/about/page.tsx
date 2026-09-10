@@ -10,7 +10,7 @@ import { timeline, values } from "@/data/content";
 export const metadata: Metadata = {
   title: "Our Story",
   description:
-    "Pizzania House — from-scratch pizza, hoagies, and more, now serving three Pennsylvania neighborhoods.",
+    "Pizzania House — from-scratch pizza, hoagies, and more in Cranberry Township, PA, with a second location coming to Washington.",
 };
 
 export default function AboutPage() {
@@ -26,7 +26,7 @@ export default function AboutPage() {
             <span className="text-ember">bold</span> flavor
           </>
         }
-        intro="Pizzania House started in Cranberry Township and grew fast — three Western Pennsylvania branches serving pizza, hoagies, wings, and breakfast, all made from scratch."
+        intro="Pizzania House opened in Cranberry Township in 2025 — a big menu of pizza, hoagies, wings, and breakfast, all made from scratch. A second location is on the way in Washington."
       />
 
       <section className="py-24">
@@ -59,9 +59,9 @@ export default function AboutPage() {
               </Reveal>
               <Reveal delay={2}>
                 <p>
-                  Word got around. A second branch opened in Connellsville, a
-                  third is on the way in Washington, and the menu keeps the same
-                  standard at every counter.
+                  Word got around fast. A second location is now on the way in
+                  Washington, and the plan is the same there: keep every item on
+                  the menu to the same standard.
                 </p>
               </Reveal>
               <Reveal delay={3}>

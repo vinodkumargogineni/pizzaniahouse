@@ -2,7 +2,7 @@ export const site = {
   name: "Pizzania House",
   tagline: "Good Food · Good Mood",
   description:
-    "Hand-tossed pizzas, loaded hoagies, and fresh food made from scratch every day. Pizzania House — Cranberry Township, with branches in Connellsville and Washington, PA.",
+    "Hand-tossed pizzas, loaded hoagies, and fresh food made from scratch every day. Pizzania House in Cranberry Township, PA — with a second location coming soon to Washington.",
   url: "https://pizzaniahouse.com",
   email: "pizzaniahousepa@gmail.com",
   phoneDisplay: "(724) 772-6226",
