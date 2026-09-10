@@ -73,8 +73,14 @@ export const locations: Location[] = [
     hours: standardHours,
     features: ["Dine-in", "Takeout", "Curbside pickup", "Delivery", "Catering"],
     orderLinks: [
-      { label: "Order Pickup", href: "#" },
-      { label: "Order Delivery", href: "#" },
+      {
+        label: "Order on Uber Eats",
+        href: "https://www.ubereats.com/store/pizzania-house-rochester-rd/ESbVpCnUWPSr8_Hq1ehFNw",
+      },
+      {
+        label: "Order on DoorDash",
+        href: "https://www.doordash.com/store/pizzania-house-cranberry-township-42456832/",
+      },
     ],
   },
   {

@@ -15,11 +15,17 @@ export const site = {
     instagram: "https://www.instagram.com/pizzania_house_cranberry/",
     facebook: "https://www.facebook.com/pizzaniahousecranberry/",
   },
-  // Delivery-partner storefronts — replace "#" with the real store URLs.
+  // Delivery-partner storefronts (Cranberry Township).
   delivery: [
-    { label: "Grubhub", href: "#" },
-    { label: "Uber Eats", href: "#" },
-    { label: "DoorDash", href: "#" },
+    {
+      label: "Uber Eats",
+      href: "https://www.ubereats.com/store/pizzania-house-rochester-rd/ESbVpCnUWPSr8_Hq1ehFNw",
+    },
+    {
+      label: "DoorDash",
+      href: "https://www.doordash.com/store/pizzania-house-cranberry-township-42456832/",
+    },
+    // TODO: add the Grubhub storefront link if they have one.
   ],
   nav: [
     { label: "Menu", href: "/menu" },
