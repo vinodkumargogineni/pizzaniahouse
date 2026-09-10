@@ -74,7 +74,9 @@ export function Navbar() {
 
         <div className="hidden lg:block">
           <Link
-            href="/menu"
+            href={site.orderOnline}
+            target="_blank"
+            rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-ember px-5 py-2.5 text-sm font-semibold text-ink transition-all hover:bg-ember-bright hover:-translate-y-0.5"
           >
             Order Now
@@ -121,7 +123,9 @@ export function Navbar() {
               ))}
             </ul>
             <Link
-              href="/menu"
+              href={site.orderOnline}
+              target="_blank"
+              rel="noreferrer"
               className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-ember px-6 py-4 font-semibold text-ink"
             >
               Order Now

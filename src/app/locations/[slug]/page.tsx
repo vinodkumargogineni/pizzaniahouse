@@ -76,8 +76,12 @@ export default async function LocationDetail({
           {loc.orderLinks.length > 0 && (
             <Reveal delay={2}>
               <div className="mt-8 flex flex-wrap gap-3">
-                {loc.orderLinks.map((o) => (
-                  <Button key={o.label} href={o.href}>
+                {loc.orderLinks.map((o, i) => (
+                  <Button
+                    key={o.label}
+                    href={o.href}
+                    variant={i === 0 ? "primary" : "outline"}
+                  >
                     {o.label}
                   </Button>
                 ))}

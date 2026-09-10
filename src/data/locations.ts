@@ -54,8 +54,6 @@ export const locations: Location[] = [
     city: "Cranberry Township",
     region: "Pennsylvania",
     postal: "16066",
-    // NOTE: printed menu shows (724) 772-6226; a DoorDash listing shows
-    // (724) 900-2177. Confirm which is the storefront line.
     phoneDisplay: "(724) 772-6226",
     phoneHref: "+17247726226",
     whatsapp: "17247726226",
@@ -73,13 +71,18 @@ export const locations: Location[] = [
     hours: cranberryHours,
     features: ["Dine-in", "Takeout", "Curbside pickup", "Delivery", "Catering"],
     orderLinks: [
+      { label: "Order online", href: "https://order.online/store/-42456832/" },
       {
-        label: "Order on Uber Eats",
+        label: "Uber Eats",
         href: "https://www.ubereats.com/store/pizzania-house-rochester-rd/ESbVpCnUWPSr8_Hq1ehFNw",
       },
       {
-        label: "Order on DoorDash",
+        label: "DoorDash",
         href: "https://www.doordash.com/store/pizzania-house-cranberry-township-42456832/",
+      },
+      {
+        label: "Postmates",
+        href: "https://postmates.com/store/pizzania-house-rochester-rd/ESbVpCnUWPSr8_Hq1ehFNw",
       },
     ],
   },

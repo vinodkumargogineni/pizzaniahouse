@@ -7,6 +7,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { combos } from "@/data/menu";
+import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Menu",
@@ -29,7 +30,10 @@ export default function MenuPage() {
         intro="Prices are subject to change and may vary slightly by location. Ask the counter about daily specials."
       >
         <div className="flex flex-wrap gap-3">
-          <Button href="#menu-top">Browse the menu</Button>
+          <Button href={site.orderOnline}>Order online</Button>
+          <Button href="#menu-top" variant="outline">
+            Browse the menu
+          </Button>
           <Button href="#combos" variant="outline">
             Combo offers
           </Button>
