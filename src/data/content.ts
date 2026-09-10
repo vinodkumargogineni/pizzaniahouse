@@ -92,15 +92,16 @@ export const cateringPackages = [
   },
 ];
 
+// Stock photos for now — swap `src` for the shop's own photography later.
 export const galleryItems = [
-  { title: "The Pizzania, straight out of the deck oven", span: "md:col-span-2 md:row-span-2", hue: 18 },
-  { title: "Ribeye on the griddle", span: "", hue: 28 },
-  { title: "48-hour dough, ready to stretch", span: "", hue: 12 },
-  { title: "Loaded steak hoagie, sectioned", span: "md:col-span-2", hue: 22 },
-  { title: "Friday night rush", span: "", hue: 8 },
-  { title: "Garlic knots, fresh butter", span: "", hue: 34 },
-  { title: "The Cranberry Township counter", span: "md:col-span-2", hue: 16 },
-  { title: "Hot honey drizzle", span: "", hue: 30 },
+  { title: "Specialty pizza, out of the oven", src: "/img/pizza-specialty.jpg", span: "md:col-span-2 md:row-span-2", hue: 18 },
+  { title: "On the griddle", src: "/img/griddle.jpg", span: "", hue: 28 },
+  { title: "Classic margherita", src: "/img/pizza-classic.jpg", span: "", hue: 12 },
+  { title: "Loaded steak hoagie", src: "/img/hoagie-club.jpg", span: "md:col-span-2", hue: 22 },
+  { title: "Dinner service", src: "/img/interior-wide.jpg", span: "", hue: 8 },
+  { title: "Wings & sides", src: "/img/wings.jpg", span: "", hue: 34 },
+  { title: "The Cranberry Township counter", src: "/img/interior-tables.jpg", span: "md:col-span-2", hue: 16 },
+  { title: "Pepperoni, fresh slice", src: "/img/pizza-slices.jpg", span: "", hue: 30 },
 ];
 
 export const faqs = [

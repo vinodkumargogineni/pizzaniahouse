@@ -34,7 +34,12 @@ export default function AboutPage() {
           <Reveal>
             <div className="overflow-hidden rounded-3xl border border-cream/10">
               <div className="aspect-[4/5]">
-                <Placeholder label="Inside the Cranberry Township kitchen" hue={18} />
+                <Placeholder
+                  label="Inside the Cranberry Township kitchen"
+                  src="/img/interior-tables.jpg"
+                  priority
+                  hue={18}
+                />
               </div>
             </div>
           </Reveal>

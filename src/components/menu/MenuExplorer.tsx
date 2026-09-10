@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { menu, tagLabels } from "@/data/menu";
 import { Container } from "@/components/ui/Container";
@@ -76,9 +77,22 @@ export function MenuExplorer() {
               {categories.map((cat) => (
                 <div key={cat.slug} id={cat.slug} className="scroll-mt-40">
                   <div className="flex flex-col gap-2 border-b border-cream/10 pb-5">
-                    <h2 className="font-display text-3xl sm:text-4xl">
-                      {cat.title}
-                    </h2>
+                    <div className="flex items-center gap-4">
+                      {cat.image && (
+                        <span className="relative hidden h-14 w-14 shrink-0 overflow-hidden rounded-xl border border-cream/10 sm:block">
+                          <Image
+                            src={cat.image}
+                            alt=""
+                            fill
+                            sizes="56px"
+                            className="object-cover"
+                          />
+                        </span>
+                      )}
+                      <h2 className="font-display text-3xl sm:text-4xl">
+                        {cat.title}
+                      </h2>
+                    </div>
                     {cat.blurb && (
                       <p className="max-w-xl text-sm text-cream/60">
                         {cat.blurb}

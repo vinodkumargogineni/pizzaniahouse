@@ -43,7 +43,7 @@ export function TheSpread() {
                 className="card-hover group flex h-full flex-col overflow-hidden rounded-2xl border border-cream/10 bg-ink-800"
               >
                 <div className="aspect-[4/3]">
-                  <Placeholder label={cat.title} hue={12 + i * 8} />
+                  <Placeholder label={cat.title} src={cat.image} hue={12 + i * 8} />
                 </div>
                 <div className="flex flex-1 flex-col p-5">
                   <h3 className="font-display text-xl text-cream group-hover:text-ember">
@@ -70,18 +70,18 @@ export function TheSpread() {
 const builds = [
   {
     name: "Philly Steak Hoagie",
-    copy: "Philly steak, grilled onions, mushrooms, green peppers and provolone. 8\" $8.99 / 12\" $12.99.",
-    hue: 22,
+    copy: "Philly steak, grilled onions, mushrooms, green peppers and provolone on a fresh roll. 8\" $8.99 · 12\" $12.99.",
+    src: "/img/hoagie-club.jpg",
   },
   {
-    name: "Steak Bacon Deluxe Hoagie",
-    copy: "Steak, crispy bacon, cheddar and provolone, lettuce, tomato, onion and mayo.",
-    hue: 30,
+    name: "Specialty Pizzas",
+    copy: "Fourteen loaded pies — Meat Lovers, Buffalo Chicken, Honey Mustard Magic and more. Medium from $15.99.",
+    src: "/img/pizza-slice-hand.jpg",
   },
   {
-    name: "Chicken Bacon Hoagie",
-    copy: "Grilled chicken, crispy bacon, onions, cheddar and provolone, ranch dressing.",
-    hue: 14,
+    name: "Chicken Wings & Sides",
+    copy: "Wings, loaded fries, mozzarella-style bites, breaded shrimp — everything you want alongside a pie.",
+    src: "/img/wings.jpg",
   },
 ];
 
@@ -91,23 +91,23 @@ export function SignatureBuild() {
       <div className="bg-grain pointer-events-none absolute inset-0 opacity-20 mix-blend-overlay" />
       <Container className="relative">
         <SectionHeading
-          eyebrow="Griddle work"
+          eyebrow="House favorites"
           align="center"
           title={
             <>
-              Cheesesteaks worth
+              What people
               <br />
-              the <span className="text-ember">drive</span>
+              come <span className="text-ember">back for</span>
             </>
           }
-          intro="We shave our ribeye in-house and build every sandwich to order on rolls baked that morning."
+          intro="Cooked to order — griddled hoagies, deck-oven pizzas, and sides worth the trip."
         />
         <div className="mt-14 grid gap-5 md:grid-cols-3">
           {builds.map((b, i) => (
             <Reveal key={b.name} delay={i}>
               <article className="card-hover flex h-full flex-col overflow-hidden rounded-2xl border border-cream/10 bg-ink">
                 <div className="aspect-[3/2]">
-                  <Placeholder label={b.name} hue={b.hue} />
+                  <Placeholder label={b.name} src={b.src} />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <h3 className="font-display text-2xl">{b.name}</h3>
@@ -191,6 +191,7 @@ export function LocationsPreview() {
                 <div className="aspect-[16/9]">
                   <Placeholder
                     label={`${loc.city}, ${loc.region}`}
+                    src={loc.image}
                     hue={[20, 150, 265][i] ?? 20}
                   />
                 </div>

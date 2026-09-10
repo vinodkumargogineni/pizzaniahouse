@@ -1,18 +1,43 @@
+import Image from "next/image";
 import { cn } from "@/lib/cn";
 
 /**
- * Styled image placeholder. Swap these out for <Image> once real photography
- * is available — keep the same aspect ratio wrappers.
+ * Media tile. Pass `src` for a real photo (stock images for now — swap for the
+ * shop's own photography later, keeping the same aspect-ratio wrappers).
+ * Without `src` it falls back to a styled gradient block.
  */
 export function Placeholder({
   label,
+  src,
   hue = 20,
+  priority = false,
   className,
 }: {
   label: string;
+  src?: string;
   hue?: number;
+  priority?: boolean;
   className?: string;
 }) {
+  if (src) {
+    return (
+      <div className={cn("relative h-full w-full overflow-hidden bg-ink-700", className)}>
+        <Image
+          src={src}
+          alt={label}
+          fill
+          priority={priority}
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
+        <p className="absolute bottom-0 left-0 z-10 p-5 text-xs font-medium uppercase tracking-[0.2em] text-cream/85">
+          {label}
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div
       className={cn(

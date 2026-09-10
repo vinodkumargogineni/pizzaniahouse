@@ -13,6 +13,7 @@ export type MenuCategory = {
   title: string;
   blurb: string;
   note?: string;
+  image?: string;
   priceTiers?: PriceTier[];
   items: MenuItem[];
 };
@@ -20,6 +21,7 @@ export type MenuCategory = {
 export const menu: MenuCategory[] = [
   {
     slug: "specialty-pizzas",
+    image: "/img/pizza-specialty.jpg",
     title: "Specialty Pizzas",
     blurb: "Our loaded pies, built on hand-tossed dough.",
     priceTiers: [
@@ -110,6 +112,7 @@ export const menu: MenuCategory[] = [
   },
   {
     slug: "pizzas",
+    image: "/img/pizza-classic.jpg",
     title: "Classic Pizzas",
     blurb: "The simple ones, done right.",
     priceTiers: [
@@ -124,6 +127,7 @@ export const menu: MenuCategory[] = [
   },
   {
     slug: "make-your-own-pizza",
+    image: "/img/pizza-slices.jpg",
     title: "Make Your Own Pizza",
     blurb:
       "Start with a base and build it. Every topping, sauce, and cheese is $0.99 — extra toppings $0.99 each.",
@@ -154,6 +158,7 @@ export const menu: MenuCategory[] = [
   },
   {
     slug: "hoagies",
+    image: "/img/hoagie-club.jpg",
     title: "Hoagies",
     blurb: "Griddled and stacked on fresh rolls.",
     priceTiers: [
@@ -217,6 +222,7 @@ export const menu: MenuCategory[] = [
   },
   {
     slug: "burgers",
+    image: "/img/burger-board.jpg",
     title: "Burgers",
     blurb: "",
     items: [
@@ -242,6 +248,7 @@ export const menu: MenuCategory[] = [
   },
   {
     slug: "appetizers",
+    image: "/img/appetizers.jpg",
     title: "Appetizers",
     blurb: "",
     items: [
@@ -262,6 +269,7 @@ export const menu: MenuCategory[] = [
   },
   {
     slug: "spring-rolls",
+    image: "/img/loaded-fries.jpg",
     title: "Spring Rolls",
     blurb: "",
     items: [
@@ -273,6 +281,7 @@ export const menu: MenuCategory[] = [
   },
   {
     slug: "cheesy-bread-bites",
+    image: "/img/loaded-fries.jpg",
     title: "Stuffed Cheesy Bread Bites",
     blurb: "",
     items: [
@@ -286,6 +295,7 @@ export const menu: MenuCategory[] = [
   },
   {
     slug: "pastas",
+    image: "/img/pasta.jpg",
     title: "Pastas",
     blurb: "",
     items: [
@@ -317,6 +327,7 @@ export const menu: MenuCategory[] = [
   },
   {
     slug: "rice-noodles",
+    image: "/img/pasta.jpg",
     title: "Rice / Noodles",
     blurb: "",
     items: [
@@ -328,6 +339,7 @@ export const menu: MenuCategory[] = [
   },
   {
     slug: "salads",
+    image: "/img/fresh-veg.jpg",
     title: "Salads",
     blurb: "",
     items: [
@@ -337,6 +349,7 @@ export const menu: MenuCategory[] = [
   },
   {
     slug: "breakfast",
+    image: "/img/breakfast.jpg",
     title: "Breakfast",
     blurb: "Served in the morning.",
     note: "Pancake flavours: Chocolate Chip & Blueberries +$1.99",
@@ -351,6 +364,7 @@ export const menu: MenuCategory[] = [
   },
   {
     slug: "desserts",
+    image: "/img/dessert-cake.jpg",
     title: "Desserts",
     blurb: "",
     items: [
@@ -363,6 +377,7 @@ export const menu: MenuCategory[] = [
   },
   {
     slug: "drinks",
+    image: "/img/dessert-tiramisu.jpg",
     title: "Drinks",
     blurb: "",
     items: [

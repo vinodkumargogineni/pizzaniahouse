@@ -38,6 +38,8 @@ export default function LocationsPage() {
                 <div className="min-h-64 lg:min-h-full">
                   <Placeholder
                     label={`${loc.city}, ${loc.region}`}
+                    src={loc.image}
+                    priority={i === 0}
                     hue={i === 0 ? 20 : 205}
                   />
                 </div>

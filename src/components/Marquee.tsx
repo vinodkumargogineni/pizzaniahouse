@@ -1,11 +1,12 @@
 const items = [
-  "Hand-tossed daily",
-  "48-hour dough",
-  "Shaved ribeye in-house",
-  "Fresh subs, cooked to order",
+  "Hand-tossed pizza",
+  "Dough made in-house",
+  "Griddled hoagies",
+  "Cooked to order",
   "Good Food · Good Mood",
-  "Two neighborhood kitchens",
+  "Breakfast from 7 AM",
   "Catering for any crowd",
+  "80+ menu items",
 ];
 
 export function Marquee() {

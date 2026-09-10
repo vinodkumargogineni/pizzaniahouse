@@ -23,7 +23,7 @@ export default function GalleryPage() {
             the <span className="text-ember">oven</span>
           </>
         }
-        intro="No stock photos. When the real shots come in, they drop right into this grid — the layout's already built for them."
+        intro="A taste of what's coming out of the kitchen. These are placeholders for now — the shop's own photos drop straight into this grid."
       />
 
       <section className="py-16">
@@ -35,7 +35,13 @@ export default function GalleryPage() {
                 delay={i % 4}
                 className={`overflow-hidden rounded-2xl border border-cream/10 ${item.span}`}
               >
-                <Placeholder label={item.title} hue={item.hue} className="h-full" />
+                <Placeholder
+                  label={item.title}
+                  src={item.src}
+                  hue={item.hue}
+                  priority={i < 2}
+                  className="h-full"
+                />
               </Reveal>
             ))}
           </div>

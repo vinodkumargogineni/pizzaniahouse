@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { PizzaArt } from "@/components/PizzaArt";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 
@@ -94,8 +94,15 @@ export function Hero() {
           transition={{ duration: 1, ease, delay: 0.3 }}
           className="relative mx-auto aspect-square w-full max-w-md"
         >
-          <div className="animate-float-slow absolute inset-0 drop-shadow-[0_40px_60px_rgba(0,0,0,0.5)]">
-            <PizzaArt />
+          <div className="animate-float-slow absolute inset-0 overflow-hidden rounded-full border-4 border-ink-700 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.7)]">
+            <Image
+              src="/img/pizza-hero.jpg"
+              alt="Pepperoni pizza fresh from the oven"
+              fill
+              priority
+              sizes="(max-width: 1024px) 90vw, 40vw"
+              className="object-cover"
+            />
           </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

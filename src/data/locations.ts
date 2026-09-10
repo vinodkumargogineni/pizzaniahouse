@@ -18,6 +18,7 @@ export type Location = {
   lng?: number;
   mapQuery: string;
   mapEmbed: string;
+  image?: string;
   blurb: string;
   hours: Hours[];
   features: string[];
@@ -64,6 +65,7 @@ export const locations: Location[] = [
     lng: -80.1208054,
     mapQuery: "Pizzania House, 2620 Rochester Rd, Cranberry Township, PA 16066",
     // Official Google Maps place embed (shows the Pizzania House pin + label).
+    image: "/img/interior-tables.jpg",
     mapEmbed:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.882530527094!2d-80.1208054!3d40.6985847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88347dd5cd0b74fb%3A0x5735deead0812184!2sPizzania%20House!5e0!3m2!1sen!2sus!4v1789077982059!5m2!1sen!2sus",
     blurb:
@@ -102,6 +104,7 @@ export const locations: Location[] = [
     lat: 40.1904918,
     lng: -80.2125217,
     mapQuery: "502 Washington Road, Washington, PA 15301",
+    image: "/img/interior-wide.jpg",
     mapEmbed:
       "https://www.google.com/maps?q=40.1904918,-80.2125217&z=17&output=embed",
     blurb:
