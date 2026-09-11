@@ -11,7 +11,10 @@ const items = [
 
 export function Marquee() {
   return (
-    <div className="border-y border-cream/10 bg-ember py-3 text-ink">
+    <div
+      aria-hidden="true"
+      className="border-y border-cream/10 bg-ember py-3 text-ink"
+    >
       <div className="flex w-max animate-marquee items-center gap-6 whitespace-nowrap will-change-transform">
         {[...items, ...items].map((item, i) => (
           <span

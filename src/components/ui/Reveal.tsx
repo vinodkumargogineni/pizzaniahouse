@@ -1,17 +1,14 @@
-"use client";
+import type { CSSProperties, ReactNode } from "react";
+import { cn } from "@/lib/cn";
 
-import { motion, type Variants } from "framer-motion";
-import type { ReactNode } from "react";
+type Tag = "div" | "li" | "span" | "section";
 
-const variants: Variants = {
-  hidden: { opacity: 0, y: 28 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: i * 0.08 },
-  }),
-};
-
+/**
+ * Entrance animation wrapper. Deliberately animates transform only — never
+ * opacity — so content is always visible to no-JS, search crawlers, and
+ * accessibility scanners. Pure CSS; degrades to no animation on old browsers
+ * and honours prefers-reduced-motion.
+ */
 export function Reveal({
   children,
   delay = 0,
@@ -21,19 +18,19 @@ export function Reveal({
   children: ReactNode;
   delay?: number;
   className?: string;
-  as?: "div" | "li" | "span" | "section";
+  as?: Tag;
 }) {
-  const MotionTag = motion[as];
+  const Tag = as as "div";
   return (
-    <MotionTag
-      className={className}
-      custom={delay}
-      variants={variants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-80px" }}
+    <Tag
+      className={cn("reveal", className)}
+      style={
+        delay
+          ? ({ "--reveal-delay": `${delay * 70}ms` } as CSSProperties)
+          : undefined
+      }
     >
       {children}
-    </MotionTag>
+    </Tag>
   );
 }

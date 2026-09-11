@@ -142,11 +142,21 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-cream/10 pt-8 text-xs text-cream/50 sm:flex-row">
+        <div className="mt-14 flex flex-col gap-4 border-t border-cream/10 pt-8 text-xs text-cream/70 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
-          <p>{site.tagline}</p>
+          <nav aria-label="Legal" className="flex flex-wrap gap-x-5 gap-y-2">
+            <Link href="/privacy" className="hover:text-ember">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-ember">
+              Terms of Service
+            </Link>
+            <Link href="/accessibility" className="hover:text-ember">
+              Accessibility
+            </Link>
+          </nav>
         </div>
       </Container>
     </footer>

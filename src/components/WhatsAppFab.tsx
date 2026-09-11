@@ -55,7 +55,7 @@ export function WhatsAppFab() {
                 </li>
               ))}
             </ul>
-            <p className="px-4 pb-3 text-[11px] text-cream/45">
+            <p className="px-4 pb-3 text-[11px] text-cream/55">
               Opens WhatsApp · {site.whatsappDisplay}
             </p>
           </motion.div>
@@ -71,6 +71,7 @@ export function WhatsAppFab() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             aria-label={open ? "Close WhatsApp menu" : "Open WhatsApp booking"}
+            aria-expanded={open}
             className="relative grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-ink shadow-[0_12px_30px_-6px_rgba(37,211,102,0.6)]"
           >
             {!open && (

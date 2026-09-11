@@ -32,6 +32,13 @@ export function Navbar() {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
   return (
     <header
       className={cn(
@@ -41,7 +48,10 @@ export function Navbar() {
           : "border-b border-transparent bg-transparent",
       )}
     >
-      <nav className="mx-auto flex h-18 max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
+      <nav
+        aria-label="Main"
+        className="mx-auto flex h-18 max-w-6xl items-center justify-between px-5 py-4 sm:px-8"
+      >
         <Link href="/" aria-label={site.name} className="relative z-10">
           <Logo />
         </Link>
@@ -54,9 +64,10 @@ export function Navbar() {
               <li key={item.href}>
                 <Link
                   href={item.href}
+                  aria-current={active ? "page" : undefined}
                   className={cn(
                     "relative rounded-full px-4 py-2 text-sm font-medium transition-colors",
-                    active ? "text-ember" : "text-cream/75 hover:text-cream",
+                    active ? "text-ember" : "text-cream/80 hover:text-cream",
                   )}
                 >
                   {item.label}
@@ -91,6 +102,8 @@ export function Navbar() {
           }}
           className="relative z-10 rounded-full border border-cream/15 p-2.5 text-cream lg:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
         >
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -99,6 +112,7 @@ export function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}

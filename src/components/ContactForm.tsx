@@ -7,7 +7,7 @@ import { cn } from "@/lib/cn";
 import { locations } from "@/data/locations";
 
 const field =
-  "w-full rounded-xl border border-cream/15 bg-ink px-4 py-3 text-sm text-cream placeholder:text-cream/35 focus:border-ember focus:outline-none";
+  "w-full rounded-xl border border-cream/15 bg-ink px-4 py-3 text-sm text-cream placeholder:text-cream/50 focus:border-ember focus:outline-none";
 
 export function ContactForm({
   variant = "contact",
@@ -18,7 +18,7 @@ export function ContactForm({
 
   return (
     <div className="rounded-2xl border border-cream/10 bg-ink p-6 sm:p-8">
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" initial={false}>
         {sent ? (
           <motion.div
             key="done"
@@ -42,7 +42,7 @@ export function ContactForm({
         ) : (
           <motion.form
             key="form"
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
             onSubmit={(e) => {
               e.preventDefault();
@@ -51,20 +51,29 @@ export function ContactForm({
             className="grid gap-4"
           >
             <div className="grid gap-4 sm:grid-cols-2">
-              <input required placeholder="Name" className={field} />
+              <input required placeholder="Name" aria-label="Your name" className={field} />
               <input
                 required
                 type="email"
                 placeholder="Email"
+                aria-label="Your email address"
                 className={field}
               />
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
-              <input placeholder="Phone" className={field} />
+              <input placeholder="Phone" aria-label="Your phone number" className={field} />
               {variant === "catering" ? (
-                <input type="date" className={cn(field, "text-cream/70")} />
+                <input
+                  type="date"
+                  aria-label="Event date"
+                  className={cn(field, "text-cream/70")}
+                />
               ) : (
-                <select className={cn(field, "text-cream/70")} defaultValue="">
+                <select
+                  aria-label="Which location or topic"
+                  className={cn(field, "text-cream/70")}
+                  defaultValue=""
+                >
                   <option value="" disabled>
                     Which location?
                   </option>
@@ -80,9 +89,10 @@ export function ContactForm({
             </div>
             {variant === "catering" && (
               <div className="grid gap-4 sm:grid-cols-2">
-                <input placeholder="Headcount" className={field} />
+                <input placeholder="Headcount" aria-label="Approximate headcount" className={field} />
                 <input
                   placeholder="Event type (office, party…)"
+                  aria-label="Event type"
                   className={field}
                 />
               </div>
@@ -90,6 +100,7 @@ export function ContactForm({
             <textarea
               required
               rows={4}
+              aria-label={variant === "catering" ? "Details about your event" : "Your message"}
               placeholder={
                 variant === "catering"
                   ? "Tell us what you're thinking — menu, budget, delivery vs. on-site…"

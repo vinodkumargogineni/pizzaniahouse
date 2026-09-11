@@ -7,7 +7,7 @@ import { WhatsAppIcon } from "./WhatsAppIcon";
 import { cn } from "@/lib/cn";
 
 const field =
-  "w-full rounded-xl border border-cream/15 bg-ink px-4 py-3 text-sm text-cream placeholder:text-cream/35 focus:border-ember focus:outline-none";
+  "w-full rounded-xl border border-cream/15 bg-ink px-4 py-3 text-sm text-cream placeholder:text-cream/50 focus:border-ember focus:outline-none";
 
 const openLocations = locations.filter((l) => l.status === "open");
 
@@ -55,11 +55,17 @@ export function BookingWidget({
         <div className="grid gap-4 sm:grid-cols-2">
           <input
             placeholder="Your name"
+            aria-label="Your name"
             value={form.name}
             onChange={set("name")}
             className={field}
           />
-          <select value={form.guests} onChange={set("guests")} className={cn(field, "text-cream/80")}>
+          <select
+            aria-label="Number of guests"
+            value={form.guests}
+            onChange={set("guests")}
+            className={cn(field, "text-cream/80")}
+          >
             {["1", "2", "3", "4", "5", "6", "7", "8", "9", "10+"].map((n) => (
               <option key={n} value={n}>
                 {n} {n === "1" ? "guest" : "guests"}
@@ -68,11 +74,28 @@ export function BookingWidget({
           </select>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
-          <input type="date" value={form.date} onChange={set("date")} className={cn(field, "text-cream/80")} />
-          <input type="time" value={form.time} onChange={set("time")} className={cn(field, "text-cream/80")} />
+          <input
+            type="date"
+            aria-label="Reservation date"
+            value={form.date}
+            onChange={set("date")}
+            className={cn(field, "text-cream/80")}
+          />
+          <input
+            type="time"
+            aria-label="Reservation time"
+            value={form.time}
+            onChange={set("time")}
+            className={cn(field, "text-cream/80")}
+          />
         </div>
         {openLocations.length > 1 && (
-          <select value={form.location} onChange={set("location")} className={cn(field, "text-cream/80")}>
+          <select
+            aria-label="Location"
+            value={form.location}
+            onChange={set("location")}
+            className={cn(field, "text-cream/80")}
+          >
             {openLocations.map((l) => (
               <option key={l.slug}>{l.name}</option>
             ))}
@@ -81,6 +104,7 @@ export function BookingWidget({
         <textarea
           rows={2}
           placeholder="High chair, big group, allergy… (optional)"
+          aria-label="Anything else we should know (optional)"
           value={form.notes}
           onChange={set("notes")}
           className={field}
@@ -93,7 +117,7 @@ export function BookingWidget({
         >
           <WhatsAppIcon size={18} /> Continue on WhatsApp
         </a>
-        <p className="text-center text-[11px] text-cream/40">
+        <p className="text-center text-[11px] text-cream/55">
           No app? It opens WhatsApp Web instead. Table held once we confirm.
         </p>
       </div>

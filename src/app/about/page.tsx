@@ -113,7 +113,7 @@ export default function AboutPage() {
             {values.map((v, i) => (
               <Reveal key={v.title} delay={i}>
                 <div className="card-hover h-full rounded-2xl border border-cream/10 bg-ink-800 p-7">
-                  <span className="font-display text-4xl text-ember/40">
+                  <span className="font-display text-4xl text-ember/70">
                     0{i + 1}
                   </span>
                   <h3 className="mt-3 font-display text-xl">{v.title}</h3>

@@ -7,12 +7,12 @@ import { waLink, bookingMessage } from "@/lib/whatsapp";
 export function CTASection() {
   return (
     <section className="relative overflow-hidden py-24">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_120%_at_50%_0%,rgba(242,103,34,0.18),transparent)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_120%_at_50%_0%,rgba(242,103,34,0.1),transparent)]" />
       <Container className="relative">
         <div className="card-hover relative overflow-hidden rounded-[2rem] border border-cream/10 bg-ink-800 p-10 text-center sm:p-16">
           <div className="bg-grain pointer-events-none absolute inset-0 opacity-20 mix-blend-overlay" />
           <Reveal>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-ember">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-ember-bright">
               Hungry yet?
             </p>
           </Reveal>

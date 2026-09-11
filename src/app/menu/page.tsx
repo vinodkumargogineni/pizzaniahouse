@@ -84,6 +84,18 @@ export default function MenuPage() {
         </Container>
       </section>
 
+      <Container className="pb-16">
+        <p className="rounded-2xl border border-cream/10 bg-ink-800 p-5 text-xs leading-relaxed text-cream/60">
+          <strong className="text-cream/80">Allergen notice.</strong> Our food is
+          prepared in a kitchen that also handles wheat, gluten, dairy, eggs, soy,
+          tree nuts, peanuts, fish, and shellfish. We cannot guarantee any item is
+          free of a specific allergen or of cross-contact.
+          &ldquo;Vegetarian&rdquo; describes the recipe as intended, not a
+          certification. Please tell our team about any allergy before you order.
+          Prices and items may vary by location and change without notice.
+        </p>
+      </Container>
+
       <CTASection />
     </>
   );

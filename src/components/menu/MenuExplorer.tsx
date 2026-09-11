@@ -39,16 +39,22 @@ export function MenuExplorer() {
     <section id="menu-top" className="scroll-mt-24 py-16">
       <Container>
         <div className="sticky top-16 z-30 -mx-5 mb-12 border-y border-cream/10 bg-ink/85 px-5 py-3 backdrop-blur-xl sm:mx-0 sm:rounded-full sm:border sm:px-3">
-          <div className="flex gap-2 overflow-x-auto">
+          <div
+            className="flex gap-2 overflow-x-auto"
+            role="group"
+            aria-label="Filter the menu"
+          >
             {filters.map((f) => (
               <button
                 key={f.id}
+                type="button"
                 onClick={() => setActive(f.id)}
+                aria-pressed={active === f.id}
                 className={cn(
                   "relative whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-colors",
                   active === f.id
                     ? "text-ink"
-                    : "text-cream/60 hover:text-cream",
+                    : "text-cream/70 hover:text-cream",
                 )}
               >
                 {active === f.id && (
@@ -65,7 +71,7 @@ export function MenuExplorer() {
         </div>
 
         <div className="space-y-20">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={active}
               initial={{ opacity: 0, y: 12 }}
@@ -114,7 +120,7 @@ export function MenuExplorer() {
                       </div>
                     )}
                     {cat.note && (
-                      <p className="text-xs text-cream/45">{cat.note}</p>
+                      <p className="text-xs text-cream/60">{cat.note}</p>
                     )}
                   </div>
 
@@ -131,7 +137,7 @@ export function MenuExplorer() {
                               <span className="font-display text-lg text-ember">
                                 {item.price}
                                 {item.priceAlt && (
-                                  <span className="ml-1 text-sm text-cream/40">
+                                  <span className="ml-1 text-sm text-cream/60">
                                     / {item.priceAlt}
                                   </span>
                                 )}

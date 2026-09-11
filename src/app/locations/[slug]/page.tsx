@@ -54,7 +54,7 @@ export default async function LocationDetail({
         ]}
       />
       <section className="relative overflow-hidden border-b border-cream/10 pb-12 pt-32 sm:pt-40">
-        <div className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-ember/20 blur-[120px]" />
+        <div className="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-ember/12 blur-[120px]" />
         <Container className="relative">
           <Link
             href="/locations"

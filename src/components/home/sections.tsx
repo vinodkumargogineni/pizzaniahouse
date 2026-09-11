@@ -146,7 +146,7 @@ export function Values() {
             {values.map((v, i) => (
               <Reveal key={v.title} delay={i}>
                 <div className="card-hover flex gap-5 rounded-2xl border border-cream/10 bg-ink-800 p-6">
-                  <span className="font-display text-3xl text-ember/40">
+                  <span className="font-display text-3xl text-ember/70">
                     0{i + 1}
                   </span>
                   <div>
