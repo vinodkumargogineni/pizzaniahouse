@@ -9,12 +9,12 @@ import {
 } from "@/components/home/sections";
 import { CTASection } from "@/components/CTASection";
 import { JsonLd } from "@/components/JsonLd";
-import { organizationSchema } from "@/lib/schema";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
 
 export default function HomePage() {
   return (
     <>
-      <JsonLd data={organizationSchema()} />
+      <JsonLd data={[organizationSchema(), websiteSchema()]} />
       <Hero />
       <Marquee />
       <TheSpread />

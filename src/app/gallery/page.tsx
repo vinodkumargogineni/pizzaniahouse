@@ -7,8 +7,10 @@ import { CTASection } from "@/components/CTASection";
 import { galleryItems } from "@/data/content";
 
 export const metadata: Metadata = {
-  title: "Gallery",
-  description: "A look inside the Pizzania House kitchen — dough, griddle, and everything off the oven.",
+  title: "Photos — Cranberry Township, PA",
+  description:
+    "A look at the pizza, cheesesteaks, hoagies and wings coming out of the Pizzania House kitchen in Cranberry Township, PA.",
+  alternates: { canonical: "/gallery" },
 };
 
 export default function GalleryPage() {

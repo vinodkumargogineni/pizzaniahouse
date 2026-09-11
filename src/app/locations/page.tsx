@@ -10,9 +10,10 @@ import { OpenNow } from "@/components/OpenNow";
 import { locations } from "@/data/locations";
 
 export const metadata: Metadata = {
-  title: "Locations",
+  title: "Locations — Cranberry Township & Washington, PA",
   description:
-    "Find Pizzania House in Cranberry Township, PA — with a second location coming soon to Washington.",
+    "Pizzania House is at 2620 Rochester Rd, Cranberry Township, PA (open daily from 7 AM), with a second location coming soon to 502 Washington Rd, Washington, PA. Hours, directions and online ordering.",
+  alternates: { canonical: "/locations" },
 };
 
 export default function LocationsPage() {

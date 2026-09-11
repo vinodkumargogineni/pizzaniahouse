@@ -104,6 +104,34 @@ export const galleryItems = [
   { title: "Pepperoni, fresh slice", src: "/img/pizza-slices.jpg", span: "", hue: 30 },
 ];
 
+// Local-intent FAQ shown on the Cranberry Township location page (+ FAQ schema).
+export const cranberryFaqs = [
+  {
+    q: "Where is Pizzania House in Cranberry Township?",
+    a: "We're at 2620 Rochester Road, Cranberry Township, PA 16066, in the space that was previously Cranberry Halal Pizza & Grill. There's parking on site and we're a short drive from Seven Fields, Mars, Warrendale, and Wexford.",
+  },
+  {
+    q: "What are your hours?",
+    a: "Monday through Saturday we're open 7:00 AM to 8:00 PM, and we're closed on Sundays. We serve breakfast, lunch, and dinner all day.",
+  },
+  {
+    q: "Do you deliver in Cranberry Township?",
+    a: "Yes. Order online for pickup or delivery through our own ordering page, or through Uber Eats, DoorDash, and Postmates. Delivery range depends on the courier; most of Cranberry Township, Seven Fields, and nearby Butler County is covered.",
+  },
+  {
+    q: "What's on the menu?",
+    a: "Hand-tossed specialty and build-your-own pizzas, Philly cheesesteaks and hoagies, burgers, wings, pasta, rice and noodle bowls, salads, a full breakfast menu, and desserts — 80-plus items in all, plus combo deals.",
+  },
+  {
+    q: "Can I book a table?",
+    a: "Yes — you can dine in. Send a quick table request through WhatsApp from our contact page or just call the shop at (724) 772-6226.",
+  },
+  {
+    q: "Do you cater in the Cranberry area?",
+    a: "We cater office lunches, game days, and parties for roughly 10 to 400 people anywhere around Cranberry Township and Butler County. See the catering page for packages, or call us for a custom quote.",
+  },
+];
+
 export const faqs = [
   {
     q: "Do you offer gluten-free crust?",

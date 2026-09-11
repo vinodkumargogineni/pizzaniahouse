@@ -10,9 +10,16 @@ import { combos } from "@/data/menu";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Menu",
+  title: "Pizza & Cheesesteak Menu — Cranberry Twp, PA",
   description:
-    "Pizzas, specialty pizzas, hoagies, burgers, pastas, rice & noodles, breakfast, appetizers, and combo deals at Pizzania House.",
+    "See the full Pizzania House menu: specialty & build-your-own pizzas, Philly cheesesteaks, hoagies, wings, pasta, breakfast, and combo deals. Cranberry Township, PA — order online for pickup or delivery.",
+  alternates: { canonical: "/menu" },
+  openGraph: {
+    title: "Pizzania House Menu — Cranberry Township, PA",
+    description:
+      "Specialty pizzas, cheesesteaks, hoagies, wings, pasta & breakfast. Order online for pickup or delivery.",
+    url: "/menu",
+  },
 };
 
 export default function MenuPage() {

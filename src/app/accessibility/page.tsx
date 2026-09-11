@@ -4,6 +4,7 @@ import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Accessibility Statement",
+  alternates: { canonical: "/accessibility" },
   description: `${site.name}'s commitment to keeping this website usable for everyone.`,
 };
 

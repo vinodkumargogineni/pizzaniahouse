@@ -47,6 +47,34 @@ export const site = {
     { label: "Catering", href: "/catering" },
     { label: "Contact", href: "/contact" },
   ],
+  // Local-SEO: neighborhoods and towns near the Cranberry Township kitchen.
+  serviceAreas: [
+    "Cranberry Township",
+    "Seven Fields",
+    "Mars",
+    "Warrendale",
+    "Wexford",
+    "Zelienople",
+    "Evans City",
+    "Callery",
+    "Gibsonia",
+    "Butler County",
+  ],
+  cuisines: ["Pizza", "Cheesesteaks", "Hoagies", "Wings", "Pasta", "Breakfast"],
+  metaKeywords: [
+    "pizza Cranberry Township",
+    "pizza near me",
+    "best pizza Cranberry Twp PA",
+    "pizza delivery Cranberry Township",
+    "Philly cheesesteak Cranberry Township",
+    "hoagies Cranberry PA",
+    "wings Cranberry Township",
+    "pizza catering Cranberry Township",
+    "Pizzania House",
+    "pizza Seven Fields",
+    "pizza Mars PA",
+    "pizza Wexford",
+  ],
 };
 
 export type NavItem = (typeof site.nav)[number];

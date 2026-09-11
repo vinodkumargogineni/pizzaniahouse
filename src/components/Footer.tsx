@@ -142,7 +142,13 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-4 border-t border-cream/10 pt-8 text-xs text-cream/70 sm:flex-row sm:items-center sm:justify-between">
+        <p className="mt-12 border-t border-cream/10 pt-8 text-xs leading-relaxed text-cream/60">
+          Pizza, cheesesteaks, hoagies, wings and breakfast in Cranberry
+          Township, PA — serving {site.serviceAreas.join(", ")}. Dine in, pickup,
+          or delivery from 2620 Rochester Road.
+        </p>
+
+        <div className="mt-6 flex flex-col gap-4 text-xs text-cream/70 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>

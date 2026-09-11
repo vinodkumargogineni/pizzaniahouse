@@ -7,19 +7,23 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { ContactForm } from "@/components/ContactForm";
 import { WhatsAppIcon } from "@/components/WhatsAppIcon";
+import { JsonLd } from "@/components/JsonLd";
 import { waLink, bookingMessage } from "@/lib/whatsapp";
+import { faqSchema } from "@/lib/schema";
 import { cateringPackages, faqs } from "@/data/content";
 import { cn } from "@/lib/cn";
 
 export const metadata: Metadata = {
-  title: "Catering",
+  title: "Pizza Catering in Cranberry Township, PA",
   description:
-    "Office lunches, game days, and full buffets. Pizzania House catering for 10 to 400 people.",
+    "Pizza and hoagie catering in Cranberry Township, PA for 10 to 400 people — office lunches, game days, parties and full buffets. Pickup or delivery from Pizzania House.",
+  alternates: { canonical: "/catering" },
 };
 
 export default function CateringPage() {
   return (
     <>
+      <JsonLd data={faqSchema(faqs)} />
       <PageHero
         eyebrow="Catering"
         title={

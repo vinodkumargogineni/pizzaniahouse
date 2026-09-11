@@ -11,8 +11,10 @@ import { OpenNow } from "@/components/OpenNow";
 import { HoursList } from "@/components/HoursList";
 import { JsonLd } from "@/components/JsonLd";
 import { locations, getLocation } from "@/data/locations";
+import { site } from "@/data/site";
+import { cranberryFaqs } from "@/data/content";
 import { waLink, bookingMessage } from "@/lib/whatsapp";
-import { restaurantSchema, breadcrumbSchema } from "@/lib/schema";
+import { restaurantSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export function generateStaticParams() {
   return locations.map((l) => ({ slug: l.slug }));
@@ -26,9 +28,23 @@ export async function generateMetadata({
   const { slug } = await params;
   const loc = getLocation(slug);
   if (!loc) return { title: "Location not found" };
+  const street = loc.addressLine1.startsWith("TODO") ? "" : `${loc.addressLine1}, `;
+  const open = loc.status === "open";
   return {
-    title: `${loc.name} — ${loc.city}, ${loc.region}`,
-    description: loc.blurb,
+    title: {
+      absolute: open
+        ? `Pizza in ${loc.city}, PA — Pizzania House, ${loc.addressLine1}`
+        : `Pizzania House ${loc.city}, PA — Coming Soon`,
+    },
+    description: open
+      ? `Pizzania House at ${street}${loc.city}, ${loc.region} ${loc.postal}. Pizza, cheesesteaks, hoagies & wings — dine in, pickup, or delivery. Call ${loc.phoneDisplay}. Hours, map and online ordering.`
+      : loc.blurb,
+    alternates: { canonical: `/locations/${loc.slug}` },
+    openGraph: {
+      title: `Pizzania House — ${loc.city}, ${loc.region}`,
+      description: loc.blurb,
+      url: `/locations/${loc.slug}`,
+    },
   };
 }
 
@@ -40,6 +56,7 @@ export default async function LocationDetail({
   const { slug } = await params;
   const loc = getLocation(slug);
   if (!loc) notFound();
+  const showFaq = loc.slug === "cranberry-township-pa";
 
   return (
     <>
@@ -51,6 +68,7 @@ export default async function LocationDetail({
             { name: "Locations", path: "/locations" },
             { name: loc.name, path: `/locations/${loc.slug}` },
           ]),
+          ...(showFaq ? [faqSchema(cranberryFaqs)] : []),
         ]}
       />
       <section className="relative overflow-hidden border-b border-cream/10 pb-12 pt-32 sm:pt-40">
@@ -215,6 +233,77 @@ export default async function LocationDetail({
           </Reveal>
         </Container>
       </section>
+
+      {showFaq && (
+        <>
+          <section className="border-t border-cream/10 bg-ink-800 py-20">
+            <Container className="max-w-3xl">
+              <Reveal>
+                <h2 className="font-display text-3xl sm:text-4xl">
+                  Pizza in {loc.city}, {loc.region}
+                </h2>
+              </Reveal>
+              <Reveal delay={1}>
+                <div className="mt-5 space-y-4 text-cream/75">
+                  <p>
+                    Pizzania House brought a full from-scratch kitchen to{" "}
+                    {loc.addressLine1} in June 2025. We hand-toss our pizza dough
+                    in the shop, shave steak for cheesesteaks and hoagies to
+                    order, and run a breakfast griddle from 7 AM — so whether
+                    you&apos;re after a specialty pizza, a Philly cheesesteak, a
+                    tray of wings, or pancakes before work, it&apos;s all made
+                    here.
+                  </p>
+                  <p>
+                    We&apos;re easy to reach from{" "}
+                    {site.serviceAreas
+                      .filter((a) => a !== "Cranberry Township" && a !== "Butler County")
+                      .slice(0, 5)
+                      .join(", ")}
+                    , and the rest of Butler County. Order online for pickup or
+                    delivery, dine in, or call{" "}
+                    <a
+                      href={`tel:${loc.phoneHref}`}
+                      className="font-medium text-ember hover:underline"
+                    >
+                      {loc.phoneDisplay}
+                    </a>
+                    . We also cater office lunches, game days, and parties across
+                    the area.
+                  </p>
+                </div>
+              </Reveal>
+            </Container>
+          </section>
+
+          <section className="py-20">
+            <Container className="max-w-3xl">
+              <Reveal>
+                <h2 className="font-display text-3xl sm:text-4xl">
+                  {loc.city} — common questions
+                </h2>
+              </Reveal>
+              <div className="mt-8 divide-y divide-cream/10 border-y border-cream/10">
+                {cranberryFaqs.map((f, i) => (
+                  <Reveal key={f.q} delay={i}>
+                    <details className="group py-5">
+                      <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-cream">
+                        {f.q}
+                        <span className="text-ember transition-transform group-open:rotate-45">
+                          +
+                        </span>
+                      </summary>
+                      <p className="mt-3 text-sm leading-relaxed text-cream/75">
+                        {f.a}
+                      </p>
+                    </details>
+                  </Reveal>
+                ))}
+              </div>
+            </Container>
+          </section>
+        </>
+      )}
 
       <CTASection />
     </>

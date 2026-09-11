@@ -24,30 +24,57 @@ const anton = Anton({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — ${site.tagline}`,
-    template: `%s · ${site.name}`,
+    default: "Pizza in Cranberry Township, PA | Pizzania House",
+    template: `%s | ${site.name}`,
   },
-  description: site.description,
+  description:
+    "Pizzania House serves hand-tossed pizza, Philly cheesesteaks, hoagies, wings, pasta and breakfast at 2620 Rochester Rd, Cranberry Township, PA. Dine in, pickup, or delivery — order online.",
   applicationName: site.name,
+  authors: [{ name: site.name }],
+  creator: site.name,
+  publisher: site.name,
   keywords: [
-    "pizza",
-    "cheesesteak",
-    "hoagies",
-    "Cranberry Township",
-    "Washington PA",
-    "catering",
+    "pizza Cranberry Township",
+    "pizza near me",
+    "best pizza Cranberry Twp PA",
+    "pizza delivery Cranberry Township",
+    "Philly cheesesteak Cranberry Township",
+    "hoagies Cranberry PA",
+    "wings Cranberry Township",
+    "pizza catering Cranberry Township",
     "Pizzania House",
+    "restaurant 2620 Rochester Rd",
+    "pizza Seven Fields",
+    "pizza Mars PA",
+    "pizza Wexford",
   ],
+  alternates: { canonical: "/" },
   openGraph: {
-    title: `${site.name} — ${site.tagline}`,
-    description: site.description,
+    title: "Pizza in Cranberry Township, PA | Pizzania House",
+    description:
+      "Hand-tossed pizza, cheesesteaks, hoagies & more at 2620 Rochester Rd, Cranberry Township. Dine in, pickup, or delivery.",
     url: site.url,
     siteName: site.name,
     locale: "en_US",
     type: "website",
   },
-  twitter: { card: "summary_large_image" },
-  robots: { index: true, follow: true },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pizza in Cranberry Township, PA | Pizzania House",
+    description:
+      "Hand-tossed pizza, cheesesteaks, hoagies & more at 2620 Rochester Rd, Cranberry Township.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
+  other: {
+    "geo.region": "US-PA",
+    "geo.placename": "Cranberry Township, Pennsylvania",
+    "geo.position": "40.6985847;-80.1208054",
+    ICBM: "40.6985847, -80.1208054",
+  },
 };
 
 export const viewport: Viewport = {

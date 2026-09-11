@@ -13,8 +13,10 @@ import { locations } from "@/data/locations";
 import { hoursSummary } from "@/lib/hours";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: "Questions, feedback, press, or a big order — reach the Pizzania House team.",
+  title: "Contact & Reservations — Cranberry Twp, PA",
+  description:
+    "Call (724) 772-6226 or message Pizzania House at 2620 Rochester Rd, Cranberry Township, PA. Book a table on WhatsApp, ask about catering, or send feedback.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

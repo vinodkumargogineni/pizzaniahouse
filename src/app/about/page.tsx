@@ -8,9 +8,10 @@ import { CTASection } from "@/components/CTASection";
 import { timeline, values } from "@/data/content";
 
 export const metadata: Metadata = {
-  title: "Our Story",
+  title: "Our Story — Cranberry Township, PA",
   description:
-    "Pizzania House — from-scratch pizza, hoagies, and more in Cranberry Township, PA, with a second location coming to Washington.",
+    "How Pizzania House started in Cranberry Township, PA: a big from-scratch menu of pizza, cheesesteaks, hoagies and breakfast, with a second location coming to Washington.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

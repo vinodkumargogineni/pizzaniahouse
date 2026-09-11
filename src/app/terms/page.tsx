@@ -4,6 +4,7 @@ import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
+  alternates: { canonical: "/terms" },
   description: `The terms that apply when you use the ${site.name} website and order from us.`,
 };
 
