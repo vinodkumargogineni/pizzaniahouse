@@ -55,6 +55,14 @@ export const metadata: Metadata = {
       "Hand-tossed pizza, cheesesteaks, hoagies & more at 2620 Rochester Rd, Cranberry Township. Dine in, pickup, or delivery.",
     url: site.url,
     siteName: site.name,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: `${site.name} logo and restaurant preview`,
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
@@ -63,6 +71,7 @@ export const metadata: Metadata = {
     title: "Pizza in Cranberry Township, PA | Pizzania House",
     description:
       "Hand-tossed pizza, cheesesteaks, hoagies & more at 2620 Rochester Rd, Cranberry Township.",
+    images: ["/twitter-image"],
   },
   robots: {
     index: true,

@@ -1,9 +1,14 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { site } from "@/data/site";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt = `${site.name} — ${site.tagline}`;
+
+const logoData = await readFile(join(process.cwd(), "public/logo.png"), "base64");
+const logoSrc = `data:image/jpeg;base64,${logoData}`;
 
 export default function OgImage() {
   return new ImageResponse(
@@ -25,23 +30,25 @@ export default function OgImage() {
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
           <div
             style={{
-              width: 64,
-              height: 64,
+              width: 260,
+              height: 86,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              background: "#f26722",
-              borderRadius: 16,
-              color: "#14100e",
-              fontSize: 40,
-              fontWeight: 800,
+              background: "#f8f2e7",
+              borderRadius: 18,
+              padding: "14px 18px",
             }}
           >
-            P
+            <img
+              src={logoSrc}
+              alt={site.name}
+              width={226}
+              height={75}
+              style={{ objectFit: "contain" }}
+            />
           </div>
-          <div style={{ fontSize: 30, fontWeight: 700, letterSpacing: 2 }}>
-            PIZZANIA HOUSE
-          </div>
+          <div style={{ fontSize: 30, fontWeight: 700 }}>{site.tagline}</div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
